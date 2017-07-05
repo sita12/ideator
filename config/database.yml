@@ -10,7 +10,7 @@ default: &default
   pool: 5
   username: username
   password: password
-   host:     <%= ENV['IP'] %>
+  host:     <%= ENV['IP'] %>
 
 development:
   <<: *default
