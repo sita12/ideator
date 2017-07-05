@@ -1,4 +1,4 @@
 class IdeasController < ApplicationController
-	 def index
+	def index
   end
 end
