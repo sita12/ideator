@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
 	def index
     @ideas = Idea.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
+
   def create    
       @idea = Idea.create(idea_params)
       if @idea.valid?
@@ -35,8 +36,7 @@ class IdeasController < ApplicationController
   end
 	
 	private 
-
 	def idea_params
 		params.require(:idea).permit(:description,:author)
-	end
+	end  
 end
