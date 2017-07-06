@@ -30,12 +30,13 @@
 
 
 
-<!--
+
 <%= simple_form_for Idea.new do |f| %>
   <%= f.input :description %>
   <%= f.input :author %>
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
+
 
 <% @ideas.each do |idea| %>
   <div class="panel panel-default">
@@ -43,8 +44,11 @@
       <blockquote>
         <p><%= idea.description %></p>
         <small>by <%= idea.author %></small>
-      </blockquote> 
+      </blockquote>
+    <div class="btn-group" role="group">
+        <%= link_to 'Delete', idea_path(idea), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+        <%= link_to 'Revise', edit_idea_path(idea), class: 'btn btn-sm btn-success' %>
+    </div>    
     </div>
   </div>
 <% end %>
-//-->
